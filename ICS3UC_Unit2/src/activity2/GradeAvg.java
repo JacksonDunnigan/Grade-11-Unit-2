@@ -13,13 +13,12 @@ public class GradeAvg {
         	//gets input
         	average += Console.readInt("Enter a grade:");
         }
-
+        
+        //divides the grades by 5
         average/=5;
+        
 		//prints the grades
-        Console.print("The averag grade is: "+average);
-		
-		
-		
-		
+        Console.print("Your average grade is: "+average);
+
 	}
 }
