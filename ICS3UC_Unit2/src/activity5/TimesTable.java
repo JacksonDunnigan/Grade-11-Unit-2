@@ -9,25 +9,24 @@ public class TimesTable {
 		//input
 		int low_number=Console.readInt("Enter the low number:");
 		int high_number=Console.readInt("Enter the high number:");
-		String table = "X";
+		String table = " ";
 		
 		//logic and math
-		for (int y = 2; y<high_number+1;y++) {
+		for (int y = low_number-1; y<high_number+1;y++) {
+			table+="\n"+y;
 			
-			for (int x = 2; x<high_number+1;x++) {
-				if (y>2) {
-					table+="\t"+x*y;
-				}
-				else {
+			for (int x = low_number; x<high_number+1;x++) {
+				
+				if (y==low_number-1) {
 					table+="\t"+x;
 				}
-				
-			}
-			table+="\n"+y;
-		}
-	
 
+				else {
+					table+="\t"+x*y;
+				}
+			}  
+		}
 		
-			Console.print(table);
+		Console.print(table);
 	}
 }
