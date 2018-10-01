@@ -10,6 +10,7 @@ public class FastFood {
 		final double TAX = 0.13;
 		
 		// input
+		Console.print("Welcome to Uncle Johnson's wacky Burger extravaganza");
 		int burgers = Console.readInt("Enter the number of burgers ($1.69 each): ");
 		int fries = Console.readInt("Enter the number of fries ($1.09 each): ");
 		int sodas = Console.readInt("Enter the number of sodas ($0.99 each): ");
