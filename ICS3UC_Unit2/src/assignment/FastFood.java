@@ -42,7 +42,16 @@ public class FastFood {
 			Console.print("-------------------");
 			Console.print("Your change: $"+Console.roundDouble(change,2));
 			
-			//calculates coins
+			//calculates change
+			double twentybill = ((change-change%20)/20);
+			change-= twentybill*20;
+			
+			double tenbill = ((change-change%10)/10);
+			change-= tenbill*10;
+			
+			double fivebill = ((change-change%5)/5);
+			change-= fivebill*5;
+			
 			double toonies = ((change-change%2)/2);
 			change-= toonies*2;
 					
@@ -61,6 +70,9 @@ public class FastFood {
 			
 			//output
 			Console.print("-------------------");
+			Console.print("20 dollar bills: " +Math.round(twentybill));
+			Console.print("10 dollar bills: "+Math.round(tenbill));
+			Console.print("5 dollar bills"+Math.round(fivebill));
 			Console.print("Toonies: " +Math.round(toonies));
 			Console.print("Loonies: "+Math.round(loonies));
 			Console.print("Quarters: "+Math.round(quarters));
