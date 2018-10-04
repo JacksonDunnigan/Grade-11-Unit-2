@@ -12,7 +12,7 @@ public class DrawShape {
 	    while (done==false)
 	    {
 	    	//gets input
-	    	int shape_type = Console.readInt("What shape will you  like to draw?: \n1) Rectangle\n2) Triangle\n3) Diamond\n");
+	    	int shape_type = Console.readInt("What shape will you  like to draw?: \n1) Rectangle\n2) Triangle\n3) Diamond\n4) Hexagon\nEnter an input:");
 	    	String shape = "";
 	    	String dot = "* ";
 	    	int width = 0;
@@ -169,7 +169,65 @@ public class DrawShape {
 	    			}
 	    			break;
 			    	
-			    	
+			    //makes a hexagon
+	    		case 4:
+	    			//input
+	    			Console.print("--------------------");
+	    			int side_length=Console.readInt("Enter the length of each side:"); 
+	    			if (side_length>0){
+	    				Console.print("--------------------");
+	    			
+				     	//makes the top of the hexagon
+		    			for (int y = 1; y <= side_length; y++) {
+		    				
+		    				for (int x = 1; x <= side_length; x++) {
+		    					
+		    					if (x>side_length/2-y && x+y>side_length){
+				    				shape+=dot;
+				    			}
+		    					else {
+		    						shape+=" ";
+		    					}
+				    		}
+	    					
+					    	//makes the center of the hexagon
+				    		for (int xx = 0; xx < side_length; xx++) {
+				    			shape+=dot;
+				    		}
+				
+		    				shape+="\n";
+		    			}
+		    			
+
+		    			//makes the bottom of the hexagon
+		    			for (int y = side_length-1; y >= 1; y--) {
+		    				
+		    				for (int x = 1; x <= side_length; x++) {
+		    					
+		    					if (x>side_length/2-y && x+y>side_length){
+				    				shape+=dot;
+				    			}
+		    					else {
+		    						shape+=" ";
+		    					}
+				    		}
+	    					
+					    	//makes the center of the hexagon
+				    		for (int xx = 0; xx < side_length; xx++) {
+				    			shape+=dot;
+				    		}
+		    				shape+="\n";
+		    			}
+		    			
+		    			Console.print(shape);
+			    		
+	    			}
+	    			else {
+	    				Console.print("Enter a proper input");
+			        	break;
+	    				
+	    			}
+	    			break;
 			    	
 			    //runs if the wrong input is entered
 	    		default:
